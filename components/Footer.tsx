@@ -11,11 +11,9 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                ✨
-              </div>
-              <span className="font-bold text-foreground">SHINE Foundation</span>
-            </div>
+            <img src="/shine.png" alt="SHINE Foundation" className="w-8 h-8" />
+            <span className="font-bold text-foreground">SHINE Foundation</span>
+          </div>
             <p className="text-sm text-muted-foreground">
               Sahyadri Hub for Innovations and Entrepreneurship supporting startups in the Mangalore region.
             </p>
@@ -30,16 +28,8 @@ export function Footer() {
                   Acceleration Program
                 </Link>
               </li>
-              <li>
-                <Link href="/portfolio?program=incubation" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Incubation Program
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Apply Now
-                </a>
-              </li>
+              
+              
             </ul>
           </div>
 

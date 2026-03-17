@@ -11,6 +11,7 @@ export function Navigation() {
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Portfolio', href: '/portfolio' },
+    
   ];
 
   return (

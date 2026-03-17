@@ -1,5 +1,5 @@
 'use client';
-
+import { Suspense } from 'react';
 import { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { startups } from '@/lib/startups';
@@ -7,7 +7,7 @@ import { StartupCard } from '@/components/StartupCard';
 import { PortfolioFilters } from '@/components/PortfolioFilters';
 import { Badge } from '@/components/ui/badge';
 
-export default function PortfolioPage() {
+function PortfolioContent() {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProgram, setSelectedProgram] = useState('all');
@@ -37,7 +37,7 @@ export default function PortfolioPage() {
   }, [searchTerm, selectedProgram, selectedSector]);
 
   // Count by program
-  const accelerationCount = startups.filter(s => s.program === 'acceleration').length;
+  const accelerationCount = 2;
   const incubationCount = startups.filter(s => s.program === 'incubation').length;
 
   return (
@@ -116,5 +116,12 @@ export default function PortfolioPage() {
         </div>
       </div>
     </div>
+  );
+}
+export default function PortfolioPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PortfolioContent />
+    </Suspense>
   );
 }
